@@ -1,0 +1,423 @@
+<!-- Github : YoshCasaster -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoshApis API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-container">
+            <i class="fas fa-bolt logo-icon"></i>
+            <a href="index.html">
+                <span class="logo-text">YoshApis</span>
+              </a>
+        </div>
+        <nav class="main-nav">
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <h1>API Documentation</h1>
+        <p class="hero-text">Fast, reliable, and developer-friendly API endpoints</p>
+        <div class="search-bar">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="apiSearch" placeholder="Search API endpoints...">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="api-stats">
+            <div class="stat-card">
+                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Activity/Firecracker.webp" alt="Firecracker" width="55" height="55" />
+                <div class="stat-info">
+                    <span class="stat-count">8</span>
+                    <span class="stat-label">Total Endpoints</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Airplane.webp" alt="Airplane" width="55" height="55" />
+                <div class="stat-info">
+                    <span class="stat-count">100%</span>
+                    <span class="stat-label">Uptime</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Rocket.webp" alt="Rocket" width="55" height="55" />
+                <div class="stat-info">
+                    <span class="stat-count">50ms</span>
+                    <span class="stat-label">Avg Response</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kategori Downloader -->
+        <div class="api-category" id="downloader-category">
+            <div class="category-header">
+                <h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Outbox%20Tray.webp" alt="Outbox Tray" width="30" height="30" /> Downloader</h2>
+                <span class="category-count">3 APIs</span>
+            </div>
+            <div class="api-list">
+                <!-- Instagram Downloader -->
+                <div class="api-item" data-category="downloader">
+                    <div class="api-header">
+                        <div class="api-title-wrapper">
+                            <span class="api-method">GET</span>
+                            <span class="api-title">Instagram Downloader</span>
+                        </div>
+                        <div class="api-actions">
+                            <span class="api-status-badge online"><i class="fas fa-circle"></i> ONLINE</span>
+                            <button class="toggle-btn" aria-label="Toggle description" data-target="igdl">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="api-description" id="igdl">
+                        <p>API untuk mendownload video atau gambar dari Instagram.</p>
+                        <div class="api-details">
+                            <div class="api-endpoint">
+                                <code>GET /api/igdl?url=<span class="param">instagram_url</span></code>
+                            </div>
+                            <div class="api-params">
+                                <h4>Parameters:</h4>
+                                <ul>
+                                    <li><code>url</code> - URL post Instagram (required)</li>
+                                </ul>
+                            </div>
+                            <div class="api-response">
+                                <h4>Response:</h4>
+                                <pre><code>{
+  "status": true,
+  "result": {
+    "type": "video/image",
+    "url": "https://..."
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                        <div class="api-actions-footer">
+                            <button class="action-btn try-btn" onclick="window.location.href='/api/igdl?url='">
+                                <i class="fas fa-play"></i> Try It
+                            </button>
+                            <button class="action-btn copy-btn" data-endpoint="/api/igdl?url=">
+                                <i class="fas fa-copy"></i> Copy URL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facebook Downloader -->
+                <div class="api-item" data-category="downloader">
+                    <div class="api-header">
+                        <div class="api-title-wrapper">
+                            <span class="api-method">GET</span>
+                            <span class="api-title">Facebook Downloader</span>
+                        </div>
+                        <div class="api-actions">
+                            <span class="api-status-badge online"><i class="fas fa-circle"></i> ONLINE</span>
+                            <button class="toggle-btn" aria-label="Toggle description" data-target="fbdl">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="api-description" id="fbdl">
+                        <p>API untuk mendownload video dari Facebook.</p>
+                        <div class="api-details">
+                            <div class="api-endpoint">
+                                <code>GET /api/fbdl?url=<span class="param">facebook_url</span></code>
+                            </div>
+                            <div class="api-params">
+                                <h4>Parameters:</h4>
+                                <ul>
+                                    <li><code>url</code> - URL post Facebook (required)</li>
+                                </ul>
+                            </div>
+                            <div class="api-response">
+                                <h4>Response:</h4>
+                                <pre><code>{
+  "status": true,
+  "result": {
+    "url": "https://..."
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                        <div class="api-actions-footer">
+                            <button class="action-btn try-btn" onclick="window.location.href='/api/fbdl?url='">
+                                <i class="fas fa-play"></i> Try It
+                            </button>
+                            <button class="action-btn copy-btn" data-endpoint="/api/fbdl?url=">
+                                <i class="fas fa-copy"></i> Copy URL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TikTok Downloader -->
+                <div class="api-item" data-category="downloader">
+                    <div class="api-header">
+                        <div class="api-title-wrapper">
+                            <span class="api-method">GET</span>
+                            <span class="api-title">TikTok Downloader</span>
+                        </div>
+                        <div class="api-actions">
+                            <span class="api-status-badge online"><i class="fas fa-circle"></i> ONLINE</span>
+                            <button class="toggle-btn" aria-label="Toggle description" data-target="ttdl">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="api-description" id="ttdl">
+                        <p>API untuk mendownload video dari TikTok.</p>
+                        <div class="api-details">
+                            <div class="api-endpoint">
+                                <code>GET /api/ttdl?url=<span class="param">tiktok_url</span></code>
+                            </div>
+                            <div class="api-params">
+                                <h4>Parameters:</h4>
+                                <ul>
+                                    <li><code>url</code> - URL video TikTok (required)</li>
+                                </ul>
+                            </div>
+                            <div class="api-response">
+                                <h4>Response:</h4>
+                                <pre><code>{
+  "status": true,
+  "result": {
+    "url": "https://...",
+    "music": "https://..."
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                        <div class="api-actions-footer">
+                            <button class="action-btn try-btn" onclick="window.location.href='/api/ttdl?url='">
+                                <i class="fas fa-play"></i> Try It
+                            </button>
+                            <button class="action-btn copy-btn" data-endpoint="/api/ttdl?url=">
+                                <i class="fas fa-copy"></i> Copy URL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategori Search -->
+        <div class="api-category" id="search-category">
+            <div class="category-header">
+                <h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Magnifying%20Glass%20Tilted%20Left.webp" alt="Magnifying Glass Tilted Left" width="30" height="30" /></i> Search</h2>
+                <span class="category-count">2 APIs</span>
+            </div>
+            <div class="api-list">
+                <!-- GitHub Stalk -->
+                <div class="api-item" data-category="search">
+                    <div class="api-header">
+                        <div class="api-title-wrapper">
+                            <span class="api-method">GET</span>
+                            <span class="api-title">GitHub Stalk</span>
+                        </div>
+                        <div class="api-actions">
+                            <span class="api-status-badge online"><i class="fas fa-circle"></i> ONLINE</span>
+                            <button class="toggle-btn" aria-label="Toggle description" data-target="githubstalk">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="api-description" id="githubstalk">
+                        <p>API untuk melihat profil GitHub pengguna.</p>
+                        <div class="api-details">
+                            <div class="api-endpoint">
+                                <code>GET /api/githubstalk?username=<span class="param">github_username</span></code>
+                            </div>
+                            <div class="api-params">
+                                <h4>Parameters:</h4>
+                                <ul>
+                                    <li><code>username</code> - Username GitHub (required)</li>
+                                </ul>
+                            </div>
+                            <div class="api-response">
+                                <h4>Response:</h4>
+                                <pre><code>{
+  "status": true,
+  "result": {
+    "username": "...",
+    "name": "...",
+    "bio": "...",
+    "followers": 0,
+    "following": 0,
+    "repos": 0
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                        <div class="api-actions-footer">
+                            <button class="action-btn try-btn" onclick="window.location.href='/api/githubstalk?username='">
+                                <i class="fas fa-play"></i> Try It
+                            </button>
+                            <button class="action-btn copy-btn" data-endpoint="/api/githubstalk?username=">
+                                <i class="fas fa-copy"></i> Copy URL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Groups -->
+                <div class="api-item" data-category="search">
+                    <div class="api-header">
+                        <div class="api-title-wrapper">
+                            <span class="api-method">GET</span>
+                            <span class="api-title">Search Groups</span>
+                        </div>
+                        <div class="api-actions">
+                            <span class="api-status-badge online"><i class="fas fa-circle"></i> ONLINE</span>
+                            <button class="toggle-btn" aria-label="Toggle description" data-target="searchgroups">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="api-description" id="searchgroups">
+                        <p>API untuk mencari grup WhatsApp berdasarkan kata kunci.</p>
+                        <div class="api-details">
+                            <div class="api-endpoint">
+                                <code>GET /api/searchgroups?q=<span class="param">search_query</span></code>
+                            </div>
+                            <div class="api-params">
+                                <h4>Parameters:</h4>
+                                <ul>
+                                    <li><code>q</code> - Kata kunci pencarian (required)</li>
+                                </ul>
+                            </div>
+                            <div class="api-response">
+                                <h4>Response:</h4>
+                                <pre><code>{
+  "status": true,
+  "results": [
+    {
+      "name": "...",
+      "link": "...",
+      "description": "..."
+    }
+  ]
+}</code></pre>
+                            </div>
+                        </div>
+                        <div class="api-actions-footer">
+                            <button class="action-btn try-btn" onclick="window.location.href='/api/searchgroups?q='">
+                                <i class="fas fa-play"></i> Try It
+                            </button>
+                            <button class="action-btn copy-btn" data-endpoint="/api/searchgroups?q=">
+                                <i class="fas fa-copy"></i> Copy URL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Github : YoshCasaster -->
+        <!-- Kategori AI -->
+        <div class="api-category" id="ai-category">
+            <div class="category-header">
+                <h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Smileys/Robot.webp" alt="Robot" width="30" height="30" /> AI</h2>
+                <span class="category-count">1 API</span>
+            </div>
+            <div class="api-list">
+                <!-- LLaMA 3.3 70B Versatile API -->
+                <div class="api-item" data-category="ai">
+                    <div class="api-header">
+                        <div class="api-title-wrapper">
+                            <span class="api-method">GET</span>
+                            <span class="api-title">LLaMA 3.3 70B Versatile</span>
+                        </div>
+                        <div class="api-actions">
+                            <span class="api-status-badge online"><i class="fas fa-circle"></i> ONLINE</span>
+                            <button class="toggle-btn" aria-label="Toggle description" data-target="llama">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="api-description" id="llama">
+                        <p>API untuk mengakses model LLaMA 3.3 70B yang serbaguna.</p>
+                        <div class="api-details">
+                            <div class="api-endpoint">
+                                <code>GET /api/llama-3.3-70b-versatile?content=<span class="param">your_prompt</span></code>
+                            </div>
+                            <div class="api-params">
+                                <h4>Parameters:</h4>
+                                <ul>
+                                    <li><code>content</code> - Prompt atau pertanyaan (required)</li>
+                                </ul>
+                            </div>
+                            <div class="api-response">
+                                <h4>Response:</h4>
+                                <pre><code>{
+  "status": true,
+  "result": {
+    "content": "...",
+    "model": "llama-3.3-70b-versatile",
+    "usage": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    }
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                        <div class="api-actions-footer">
+                            <button class="action-btn try-btn" onclick="window.location.href='/api/llama-3.3-70b-versatile?content='">
+                                <i class="fas fa-play"></i> Try It
+                            </button>
+                            <button class="action-btn copy-btn" data-endpoint="/api/llama-3.3-70b-versatile?content=">
+                                <i class="fas fa-copy"></i> Copy URL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Notice -->
+        <div class="no-results hidden" id="noResults">
+            <i class="fas fa-search"></i>
+            <p>No matching APIs found. Try another search term.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-bolt"></i>
+                    <span>YoshApis</span>
+                </div>
+                <p>Fast & Reliable API Services</p>
+            </div>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-code"></i> Developer</a>
+                <a href="#"><i class="fas fa-question-circle"></i> Support</a>
+                <a href="#"><i class="fas fa-shield-alt"></i> Status</a>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 API YoshApis – All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <div class="toast-message">URL copied to clipboard!</div>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
+</body>
+</html>
